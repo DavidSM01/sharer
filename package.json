@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "serve": "vite serve",
+    "build": "vite build",
+    "dev": "vite serve --config .dev/vite.config.js",
+    "dev-build": "bash .dev/dev-build.sh && vite build --config .dev/vite.config.js"
+  },
+  "devDependencies": {
+    "eruda": "^3.0.1",
+    "vite": "^5.0.10",
+    "vite-plugin-html": "^3.2.1",
+    "vite-plugin-zip-pack": "^1.0.7"
+  },
+  "dependencies": {
+    "consistent-color-generation": "^0.4.0",
+    "jszip": "^3.10.1",
+    "localforage": "^1.10.0"
+  }
+}
