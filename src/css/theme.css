@@ -1,0 +1,17 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #fff;
+    --bg-color: hsl(0, 0%, 7%);
+    --btn-color: hsl(0, 0%, 15%);
+    --btn-change-color: hsl(0, 0%, 20%)
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --text-color: #000;
+    --bg-color: hsl(0, 0%, 98%);
+    --btn-color: hsl(0, 0%, 90%);
+    --btn-change-color: hsl(0, 0%, 80%);
+  }
+}

@@ -2,18 +2,55 @@
 <html>
 
 <head>
+  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <link rel="stylesheet" href="src/css/theme.css">
   <link rel="stylesheet" href="src/css/basic.css">
   <link rel="stylesheet" href="src/css/main.css">
   
   <script src="webxdc.js"></script>
+  
 </head>
 
 <body>
   
+  <div id="main_div">
+    
+    <div align="middle" class="fixedHeader">
+      
+      <button class="twoBtns active" id="showReceive_btn">
+        <img src="src/assets/imgs/download.svg">
+        Receive
+      </button>
+      
+      <button class="twoBtns no-active" id="showSend_btn">
+        <img src="src/assets/imgs/upload.svg">
+        Send
+      </button>
+      
+    </div>
+    
+    <div id="receive_div">
+      <button id="importUpdates_btn">
+        <img src="src/assets/imgs/download.svg">
+        Import updates
+      </button>
+    </div>
+    
+    <div class="hidden" id="send_div">
+      <button id="sendFiles_btn">
+        <img src="src/assets/imgs/upload.svg">
+        Send files
+      </button>
+    </div>
+    
+  </div>
+  
+  
   <script type="module" src="src/js/main.js"></script>
+  
 </body>
 
 </html>
