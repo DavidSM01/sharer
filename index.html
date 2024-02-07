@@ -20,12 +20,12 @@
     
     <div align="middle" class="fixedHeader">
       
-      <button class="twoBtns active" id="showReceive_btn">
+      <button class="active" id="showReceive_btn">
         <img src="src/assets/imgs/download.svg">
         Receive
       </button>
       
-      <button class="twoBtns no-active" id="showSend_btn">
+      <button class="no-active" id="showSend_btn">
         <img src="src/assets/imgs/upload.svg">
         Send
       </button>
@@ -33,17 +33,137 @@
     </div>
     
     <div id="receive_div">
+      
       <button id="importUpdates_btn">
         <img src="src/assets/imgs/download.svg">
-        Import updates
+        Import Updates
       </button>
+      
     </div>
     
     <div class="hidden" id="send_div">
+      
       <button id="sendFiles_btn">
         <img src="src/assets/imgs/upload.svg">
-        Send files
+        Send Files
       </button>
+      
+    </div>
+    
+  </div>
+  
+  
+  <div class="hidden" id="sendFiles_div">
+    
+    <button id="closeSendFiles_btn">
+      <img src="src/assets/imgs/chevron-left.svg">
+    </button>
+    
+    <h3 align="middle">Send Files</h3>
+    
+    <div class="config-elem">
+      
+      <div class="config-text w75">
+        
+        <div class="config-header">
+          Compress
+        </div>
+        
+        <div class="config-details">
+          It will take longer with bigger files.
+        </div>
+        
+      </div>
+      
+      <input id="compress_checkbox" class="config-checkbox" type="checkbox" checked>
+      
+    </div>
+    
+    <div class="config-elem">
+      
+      <div class="config-text">
+        
+        <div class="config-header">
+          Part Size
+        </div>
+        
+        <div class="config-details">
+          Mandatory, minimum 40 KB.
+        </div>
+        
+      </div>
+      
+      <div class="config-inputs">
+        
+        <input id="size_input" type="number" value="1" placeholder="value">
+        
+        <select id="unit_select">
+          <option value="1048576">MB</option>
+          <option value="1024">KB</option>
+        </select>
+        
+      </div>
+      
+    </div>
+    
+    
+    <div class="config-elem">
+      
+      <div class="config-text">
+        
+        <div class="config-header">
+          Note
+        </div>
+        
+        <div class="config-details">
+          Optional, maximum 50 characters.
+        </div>
+        
+      </div>
+      
+      <div class="config-inputs">
+        
+        <input id="note_input" type="text" maxlength="50" placeholder="Add text here">
+        
+      </div>
+      
+    </div>
+    
+    <div class="config-elem">
+      
+      <div class="config-text">
+        
+        <div class="config-header">
+          Select File(s)
+        </div>
+        
+        <div class="config-details">
+          Mandatory, you can select multiples files of any kind.
+        </div>
+        
+      </div>
+      
+      <div class="config-inputs">
+        
+        <input id="file_input" class="hidden" type="file" multiple>
+        <button id="selectFiles_btn">
+          <img src="src/assets/imgs/file.svg">
+          Select
+        </button>
+        
+        <span id="filesInfo_span"></span>
+        
+      </div>
+      
+    </div>
+    
+    <div align="middle">
+      
+      <button id="send_btn">
+        <img src="src/assets/imgs/upload.svg">
+        Send
+      </button>
+      
     </div>
     
   </div>
