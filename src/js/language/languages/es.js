@@ -1,0 +1,17 @@
+export default {
+  SEND: "Enviar",
+  RECEIVE: "Recibir",
+  IMPORT_PARTS: "Importar Partes",
+  SEND_FILES: "Enviar Archivos",
+  COMPRESS: "Comprimir",
+  COMPRESS_DETAILS: "Puede demorar un poco con archivos grandes.",
+  PART_SIZE: "Tamaño de las partes",
+  PART_SIZE_DETAILS: "Obligatorio, mínimo 40 KB.",
+  VALUE: "Valor",
+  NOTE: "Nota",
+  NOTE_DETAILS: "Opcional, máximo 50 carácteres",
+  ADD_TEXT_HERE: "Añade texto aquí",
+  SELECT_FILES: "Seleccionar archivo(s)",
+  SELECT_FILES_DETAILS: "Obligatorio, puedes seleccionar multiples archivos de cualquier tipo.",
+  SELECT: "Seleccionar",
+}

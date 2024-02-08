@@ -22,12 +22,12 @@
       
       <button class="active" id="showReceive_btn">
         <img src="src/assets/imgs/download.svg">
-        Receive
+        <span lg="RECEIVE"></span>
       </button>
       
       <button class="no-active" id="showSend_btn">
         <img src="src/assets/imgs/upload.svg">
-        Send
+        <span lg="SEND"></span>
       </button>
       
     </div>
@@ -36,7 +36,7 @@
       
       <button id="importUpdates_btn">
         <img src="src/assets/imgs/download.svg">
-        Import Updates
+        <span lg="IMPORT_PARTS"></span>
       </button>
       
     </div>
@@ -45,7 +45,7 @@
       
       <button id="sendFiles_btn">
         <img src="src/assets/imgs/upload.svg">
-        Send Files
+        <span lg="SEND_FILES"></span>
       </button>
       
     </div>
@@ -59,18 +59,20 @@
       <img src="src/assets/imgs/chevron-left.svg">
     </button>
     
-    <h3 align="middle">Send Files</h3>
+    <h3 align="middle">
+      <span lg="SEND_FILES"></span>
+      </h3>
     
     <div class="config-elem">
       
       <div class="config-text w75">
         
         <div class="config-header">
-          Compress
+          <span lg="COMPRESS"></span>
         </div>
         
         <div class="config-details">
-          It will take longer with bigger files.
+          <span lg="COMPRESS_DETAILS"></span>
         </div>
         
       </div>
@@ -84,18 +86,18 @@
       <div class="config-text">
         
         <div class="config-header">
-          Part Size
+          <span lg="PART_SIZE"></span>
         </div>
         
         <div class="config-details">
-          Mandatory, minimum 40 KB.
+          <span lg="PART_SIZE_DETAILS"></span>
         </div>
         
       </div>
       
       <div class="config-inputs">
         
-        <input id="size_input" type="number" value="1" placeholder="value">
+        <input id="size_input" type="number" value="1" lg="VALUE">
         
         <select id="unit_select">
           <option value="1048576">MB</option>
@@ -112,18 +114,18 @@
       <div class="config-text">
         
         <div class="config-header">
-          Note
+          <span lg="NOTE"></span>
         </div>
         
         <div class="config-details">
-          Optional, maximum 50 characters.
+          <span lg="NOTE_DETAILS"></span>
         </div>
         
       </div>
       
       <div class="config-inputs">
         
-        <input id="note_input" type="text" maxlength="50" placeholder="Add text here">
+        <input id="note_input" type="text" maxlength="50" lg="ADD_TEXT_HERE">
         
       </div>
       
@@ -134,11 +136,11 @@
       <div class="config-text">
         
         <div class="config-header">
-          Select File(s)
+          <span lg="SELECT_FILES"></span>
         </div>
         
         <div class="config-details">
-          Mandatory, you can select multiples files of any kind.
+          <span lg="SELECT_FILES_DETAILS"></span>
         </div>
         
       </div>
@@ -148,7 +150,7 @@
         <input id="file_input" class="hidden" type="file" multiple>
         <button id="selectFiles_btn">
           <img src="src/assets/imgs/file.svg">
-          Select
+          <span lg="SELECT"></span>
         </button>
         
         <span id="filesInfo_span"></span>
@@ -161,7 +163,7 @@
       
       <button id="send_btn">
         <img src="src/assets/imgs/upload.svg">
-        Send
+        <span lg="SEND"></span>
       </button>
       
     </div>

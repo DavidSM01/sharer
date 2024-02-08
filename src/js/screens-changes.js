@@ -1,5 +1,6 @@
 import * as util from './util/util.js';
 
+
 export default function () {
 
   showReceive_btn.onclick = function () {
@@ -21,7 +22,6 @@ export default function () {
 
 
   sendFiles_btn.onclick = () => toggleSendFilesScreen();
-
   closeSendFiles_btn.onclick = () => toggleSendFilesScreen();
 
   function toggleSendFilesScreen() {
