@@ -2,7 +2,7 @@ import * as util from '../util/util.js';
 import languages from './langs.js';
 
 
-export let languageTexts = getLanguageData();
+export let LANG = getLanguageData();
 
 
 export function setInitials() {
@@ -12,15 +12,15 @@ export function setInitials() {
 
   function setElemsText() {
 
-    let setTextContent = (elem, languageKey) => elem.textContent = languageTexts[languageKey];
+    let setText = (elem, languageKey) => util.setTextContent(LANG[languageKey], elem);
 
-    setLg("span", setTextContent);
+    setLg("span", setText);
 
   }
 
   function setPlaceholders() {
 
-    let setPlaceholder = (elem, languageKey) => util.setElemAttr(languageTexts[languageKey], elem, "placeholder");
+    let setPlaceholder = (elem, languageKey) => util.setElemAttr(LANG[languageKey], elem, "placeholder");
 
     setLg("input", setPlaceholder);
 

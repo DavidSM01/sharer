@@ -10,7 +10,6 @@
     "unplugin-zip-pack": "^1.0.1",
     "vite": "^5.0.12",
     "vite-plugin-html": "^3.2.2",
-    "vite-plugin-zip-pack": "^1.2.1",
     "webxdc-dev": "^0.17.0"
   },
   "dependencies": {

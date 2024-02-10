@@ -31,9 +31,6 @@ devDependencies:
   vite-plugin-html:
     specifier: ^3.2.2
     version: 3.2.2(vite@5.0.12)
-  vite-plugin-zip-pack:
-    specifier: ^1.2.1
-    version: 1.2.1(vite@5.0.12)
   webxdc-dev:
     specifier: ^0.17.0
     version: 0.17.0
@@ -1969,15 +1966,6 @@ packages:
       html-minifier-terser: 6.1.0
       node-html-parser: 5.4.2
       pathe: 0.2.0
-      vite: 5.0.12
-    dev: true
-
-  /vite-plugin-zip-pack@1.2.1(vite@5.0.12):
-    resolution: {integrity: sha512-TKQ4BY+u9tpq0/mi/Dm3J8to8Bta8zAdqQrfysTKCoH4kgrvI8FrqSlFx+CjJ4nz0F/YD+0zb142HiEqUrLXeA==}
-    peerDependencies:
-      vite: '>=2.x'
-    dependencies:
-      jszip: 3.10.1
       vite: 5.0.12
     dev: true
 

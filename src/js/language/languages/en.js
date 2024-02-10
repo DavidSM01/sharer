@@ -14,4 +14,5 @@ export default {
   SELECT_FILES: "Select file(s)",
   SELECT_FILES_DETAILS: "Mandatory, you can select multiple files of any kind.",
   SELECT: "Select",
+  FILES: "files",
 }

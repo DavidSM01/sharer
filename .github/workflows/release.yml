@@ -27,4 +27,4 @@ jobs:
             Auto-generated release
           prerelease: ${{ contains(github.event.ref, '-beta') }}
           fail_on_unmatched_files: true
-          files: ./dist-xdc/*.xdc
+          files: ./dist/*.xdc

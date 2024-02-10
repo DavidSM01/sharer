@@ -1,4 +1,5 @@
 import * as util from '../util/util.js';
+import { LANG } from '../language/lang.js';
 
 
 export default function () {
@@ -49,10 +50,10 @@ export default function () {
       let files = this.files;
       let amount = files.length;
 
-      let innerHtml = (html) => util.setInnerHtml(filesInfo_span, html);
+      let innerHtml = (html) => util.setInnerHTML(html, filesInfo_span);
 
       if (amount == 1) innerHtml(files[0].name);
-      if (amount > 1) innerHtml(`${amount} files`);
+      if (amount > 1) innerHtml(`${amount} ${LANG.FILES}`);
 
     }
   }

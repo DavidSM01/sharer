@@ -125,3 +125,8 @@
   height: 40px;
   margin: 10px;
 }
+
+
+.warning {
+  background-color: hsl(0, 84.2%, 60.2%);
+}
