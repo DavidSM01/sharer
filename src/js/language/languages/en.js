@@ -1,6 +1,4 @@
 export default {
-  SEND: "Send",
-  RECEIVE: "Receive",
   IMPORT_PARTS: "Import Parts",
   SEND_FILES: "Send Files",
   COMPRESS: "Compress",
@@ -15,4 +13,5 @@ export default {
   SELECT_FILES_DETAILS: "Mandatory, you can select multiple files of any kind.",
   SELECT: "Select",
   FILES: "files",
+  SEND: "Send",
 }

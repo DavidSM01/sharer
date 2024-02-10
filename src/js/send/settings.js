@@ -10,10 +10,10 @@ export default function () {
 
   function setSettingsSavers() {
 
-    let saveElemAttr = (elem, attr = "value") => util.LSsetItem(elem.id, elem[attr]);
+    let saveElemAttr = (elem, attr = 'value') => util.LSsetItem(elem.id, elem[attr]);
 
     compress_checkbox.onchange = function () {
-      saveElemAttr(this, "checked");
+      saveElemAttr(this, 'checked');
     }
 
     size_input.oninput = function () {
@@ -29,11 +29,11 @@ export default function () {
 
   function setSavedSettings() {
 
-    let compression = util.LSgetItem("compress_checkbox");
-    let size = util.LSgetItem("size_input");
-    let unit = util.LSgetItem("unit_select");
+    let compression = util.LSgetItem('compress_checkbox');
+    let size = util.LSgetItem('size_input');
+    let unit = util.LSgetItem('unit_select');
 
-    if (compression == "false") util.setElemAttr(false, compress_checkbox, "checked")
+    if (compression == 'false') util.setElemAttr(false, compress_checkbox, 'checked')
     if (size) util.setElemAttr(size, size_input);
     if (unit) util.setElemAttr(unit, unit_select);
 
@@ -50,10 +50,10 @@ export default function () {
       let files = this.files;
       let amount = files.length;
 
-      let innerHtml = (html) => util.setInnerHTML(html, filesInfo_span);
+      let setText = (html) => util.setInnerHTML(html, filesInfo_span);
 
-      if (amount == 1) innerHtml(files[0].name);
-      if (amount > 1) innerHtml(`${amount} ${LANG.FILES}`);
+      if (amount == 1) setText(files[0].name);
+      if (amount > 1) setText(`${amount} ${LANG.FILES}`);
 
     }
   }

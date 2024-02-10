@@ -12,20 +12,6 @@
 }
 
 
-#receive_div,
-#send_div {
-  margin-top: 45px;
-}
-
-
-#importUpdates_btn,
-#sendFiles_btn {
-  height: 40px;
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-}
-
 
 .hidden {
   display: none;

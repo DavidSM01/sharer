@@ -7,27 +7,28 @@ export let LANG = getLanguageData();
 
 export function setInitials() {
 
-  setElemsText();
+  setTexts();
   setPlaceholders();
 
-  function setElemsText() {
+  function setTexts() {
 
-    let setText = (elem, languageKey) => util.setTextContent(LANG[languageKey], elem);
+    let setText = (elem, languageKey) => util.setInnerHTML(LANG[languageKey], elem);
 
-    setLg("span", setText);
+    setElemsLang("span", setText);
 
   }
+
 
   function setPlaceholders() {
 
     let setPlaceholder = (elem, languageKey) => util.setElemAttr(LANG[languageKey], elem, "placeholder");
 
-    setLg("input", setPlaceholder);
+    setElemsLang("input", setPlaceholder);
 
   }
 
 
-  function setLg(elemsTag, setFunc) {
+  function setElemsLang(elemsTag, setFunc) {
 
     let elems = util.getByTag(elemsTag);
     let elemsArr = util.arrFrom(elems);
@@ -43,10 +44,13 @@ export function setInitials() {
 
 function getLanguageData() {
 
-  let browserLanguage = window.navigator.language || 'en-US';
-  browserLanguage = browserLanguage.slice(0, 2).toLowerCase();
+  let browserLanguage = window.navigator.language;
 
-  let languageData = languages[browserLanguage] || languages["en"];
+  let language = browserLanguage || "en-US";
+  language = language.slice(0, 2).toLowerCase();
+
+
+  let languageData = languages[language] || languages["en"];
 
   return languageData;
 
