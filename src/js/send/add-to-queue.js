@@ -12,6 +12,7 @@ export default function addToQueue() {
 function checkMandatories() {
 
   let compression = compress_checkbox.checked;
+  let confirmRequired = confirm_checkbox.checked;
   let note = note_input.value;
 
   let partSize = size_input.value * unit_select.value;
@@ -20,7 +21,7 @@ function checkMandatories() {
   let amount = files.length;
 
 
-  let highlight = (elem) => util.addClass('warning', elem);
+  let highlight = elem => util.addClass('warning', elem);
 
 
   let validPartSize = partSize >= 40960 || highlight(partSize_div);
@@ -31,11 +32,48 @@ function checkMandatories() {
   if (filesSelected) util.removeClass('warning', selectFiles_div);
 
 
-  if (validPartSize && filesSelected) return [files, partSize, compression, note];
+  if (validPartSize && filesSelected) return [files, partSize, compression, confirmRequired, note];
 
 }
 
 
-function processFiles(files, partSize, compression, note) {
+function processFiles(files, partSize, compression, confirmRequired, note) {
+  
+  let filesInfo = {
+    partSize: partSize,
+    note: note,
+  }
+  
+  let filesArr = util.arrFrom(files);
+  
+  let updates = filesArr.map((file, index) => processFile(file, index, partSize, compression, confirmRequired));
 
+}
+
+
+
+function processFile(file, index, partSize, compression, confirmRequired) {
+  
+  let name = file.name;
+  let size = file.size;
+  let type = file.type;
+  
+  let time = util.time();
+  let randomNumber = util.random();
+  
+  let id = time + index + randomNumber;
+  
+  let info = {
+    id: id,
+    name: name,
+    size: size,
+    type: type,
+    time: time,
+  }
+  
+  
+  //let base64 = zipFile(file);
+  
+  
+  return [info];
 }

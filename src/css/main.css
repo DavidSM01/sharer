@@ -6,31 +6,21 @@
 
 .fixedHeader button {
   width: 45%;
-  height: 40px;
   margin-left: 1%;
   margin-right: 1%;
 }
-
 
 
 .hidden {
   display: none;
 }
 
-
-.active {
-  color: var(--text-color);
-  background-color: hsl(200, 90%, 60%);
+.bold {
+  font-weight: bold;
 }
 
-.active:hover,
-.active:focus {
-  background-color: hsl(200, 90%, 60%);
-}
-
-.no-active {
-  color: grey;
-  background-color: var(--btn-color);
+.small {
+  font-size: 80%;
 }
 
 
@@ -52,14 +42,6 @@
   padding-left: 2%;
 }
 
-.config-header {
-  font-weight: bold;
-}
-
-.config-details {
-  font-size: 80%;
-}
-
 .config-checkbox {
   display: inline-block;
   width: 18%;
@@ -76,39 +58,17 @@
 
 
 #size_input {
-  height: 35px;
   width: 20%;
-  text-align: center;
-}
-
-#unit_select {
-  height: 35px;
 }
 
 
 #note_input {
   width: 90%;
-  height: 35px;
 }
 
 
-#selectFiles_btn {
-  height: 40px;
-}
-
-
-#filesInfo_span {
-  font-size: 85%;
-}
-
-
-#closeSendFiles_btn {
-  margin: 10px;
-}
-
-
+#closeSendFiles_btn,
 #send_btn {
-  height: 40px;
   margin: 10px;
 }
 

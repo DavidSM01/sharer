@@ -14,4 +14,6 @@ export default {
   SELECT: "Seleccionar",
   FILES: "archivos",
   SEND: "Enviar",
+  REQUIRE_CONFIRMATION: "Requerir confirmación",
+  CONFIRMATION_DETAILS: "Esperar por confirmación de que cada parte es recibida para enviar la siguiente",
 }

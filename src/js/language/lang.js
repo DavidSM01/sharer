@@ -2,7 +2,7 @@ import * as util from '../util/util.js';
 import languages from './langs.js';
 
 
-export let LANG = getLanguageData();
+export let LANG = getLanguageData;
 
 
 export function setInitials() {
@@ -10,9 +10,10 @@ export function setInitials() {
   setTexts();
   setPlaceholders();
 
+
   function setTexts() {
 
-    let setText = (elem, languageKey) => util.setInnerHTML(LANG[languageKey], elem);
+    let setText = (elem, langKey) => util.setInnerHTML(LANG(langKey), elem);
 
     setElemsLang("span", setText);
 
@@ -21,11 +22,12 @@ export function setInitials() {
 
   function setPlaceholders() {
 
-    let setPlaceholder = (elem, languageKey) => util.setElemAttr(LANG[languageKey], elem, "placeholder");
+    let setPlaceholder = (elem, langKey) => util.setElemAttr(LANG(langKey), elem, "placeholder");
 
     setElemsLang("input", setPlaceholder);
 
   }
+
 
 
   function setElemsLang(elemsTag, setFunc) {
@@ -34,26 +36,26 @@ export function setInitials() {
     let elemsArr = util.arrFrom(elems);
 
     elemsArr.forEach((elem) => {
-      let lgKey = util.getAttrVal(elem, "lg");
-      if (lgKey) setFunc(elem, lgKey);
+      let langKey = util.getAttrVal(elem, "lg");
+      if (langKey) setFunc(elem, langKey);
+
     });
   }
 
 }
 
 
-function getLanguageData() {
+function getLanguageData(key) {
 
-  let browserLanguage = window.navigator.language;
+  let browserLang = window.navigator && window.navigator.language;
 
-  let language = browserLanguage || "en-US";
-  language = language.slice(0, 2).toLowerCase();
+  let lang = (browserLang || "en-US").slice(0, 2).toLowerCase();
 
+  let langData = languages[lang];
+  let fallbackData = languages["en"];
 
-  let languageData = languages[language] || languages["en"];
+  let data = langData[key] || fallbackData[key];
 
-  return languageData;
+  return data;
 
 }
-
-
