@@ -39,10 +39,10 @@ export default function () {
     let size = util.LSgetItem('size_input');
     let unit = util.LSgetItem('unit_select');
 
-    if (confirmRequired == 'true') util.setElemAttr(true, confirm_checkbox, 'checked');
-    if (compression == 'false') util.setElemAttr(false, compress_checkbox, 'checked')
-    if (size) util.setElemAttr(size, size_input);
-    if (unit) util.setElemAttr(unit, unit_select);
+    if (confirmRequired == 'true') util.doc.setElemAttr(true, confirm_checkbox, 'checked');
+    if (compression == 'false') util.doc.setElemAttr(false, compress_checkbox, 'checked')
+    if (size) util.doc.setElemAttr(size, size_input);
+    if (unit) util.doc.setElemAttr(unit, unit_select);
 
   }
 
@@ -57,12 +57,13 @@ export default function () {
       let files = this.files;
       let amount = files.length;
 
-      let setText = html => util.setInnerHTML(html, filesInfo_span);
+      let setText = html => util.doc.setInnerHTML(html, filesInfo_span);
 
       if (amount == 1) setText(files[0].name);
       if (amount > 1) setText(`${amount} ${LANG('FILES')}`);
 
     }
   }
+
 
 }

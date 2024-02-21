@@ -1,13 +1,14 @@
 {
   "scripts": {
     "serve": "vite serve --port 3000",
-    "dev": "npx concurrently 'npm run serve' 'npx webxdc-dev run http://localhost:3000'",
-    "build": "vite build"
+    "build": "vite build && ./.dev/create-xdc.sh",
+    "dev": "vite serve --port 3000 --config ./.dev/vite.config.js",
+    "dev-adv": "concurrently 'npm run dev' 'npx webxdc-dev run http://localhost:3000'",
+    "dev-build": "vite build --config ./.dev/vite.config.js && ./.dev/add-eruda.sh && ./.dev/create-xdc.sh"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
     "eruda": "^3.0.1",
-    "unplugin-zip-pack": "^1.0.1",
     "vite": "^5.0.12",
     "vite-plugin-html": "^3.2.2",
     "webxdc-dev": "^0.17.0"

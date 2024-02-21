@@ -1,2 +1,4 @@
 name = "Sharer"
 source_code_url = "https://github.com/DavidSM100/sharer"
+description = "App to facilitate sharing files"
+version = ""
