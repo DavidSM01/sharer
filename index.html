@@ -18,16 +18,16 @@
   
   <div id="main_div">
     
-    <div align="middle" class="fixedHeader">
+  <div align="middle" class="fixedHeader">
       
       <button id="importParts_btn">
         <img src="src/assets/imgs/download.svg">
-        <span lg="IMPORT_PARTS"></span>
+        <span data-lg="IMPORT_PARTS"></span>
       </button>
       
       <button id="sendFiles_btn">
         <img src="src/assets/imgs/upload.svg">
-        <span lg="SEND_FILES"></span>
+        <span data-lg="SEND_FILES"></span>
       </button>
       
     </div>
@@ -42,7 +42,7 @@
     </button>
     
     <h3 align="middle">
-      <span lg="SEND_FILES"></span>
+      <span data-lg="SEND_FILES"></span>
     </h3>
     
     <div class="config-elem">
@@ -50,11 +50,11 @@
       <div class="config-text w75">
         
         <div class="bold">
-          <span lg="COMPRESS"></span>
+          <span data-lg="COMPRESS"></span>
         </div>
         
         <div class="small">
-          <span lg="COMPRESS_DETAILS"></span>
+          <span data-lg="COMPRESS_DETAILS"></span>
         </div>
         
       </div>
@@ -68,11 +68,11 @@
       <div class="config-text w75">
         
         <div class="bold">
-          <span lg="REQUIRE_CONFIRMATION"></span>
+          <span data-lg="REQUIRE_CONFIRMATION"></span>
         </div>
         
         <div class="small">
-          <span lg="CONFIRMATION_DETAILS"></span>
+          <span data-lg="CONFIRMATION_DETAILS"></span>
         </div>
         
       </div>
@@ -87,18 +87,18 @@
       <div class="config-text">
         
         <div class="bold">
-          <span lg="PART_SIZE"></span>
+          <span data-lg="PART_SIZE"></span>
         </div>
         
         <div class="small">
-          <span lg="PART_SIZE_DETAILS"></span>
+          <span data-lg="PART_SIZE_DETAILS"></span>
         </div>
         
       </div>
       
       <div class="config-inputs">
         
-        <input id="size_input" type="number" value="1" lg="VALUE">
+        <input id="size_input" type="number" value="1" data-lg="VALUE">
         
         <select id="unit_select">
           <option value="1048576">MB</option>
@@ -115,18 +115,18 @@
       <div class="config-text">
         
         <div class="bold">
-          <span lg="NOTE"></span>
+          <span data-lg="NOTE"></span>
         </div>
         
         <div class="small">
-          <span lg="NOTE_DETAILS"></span>
+          <span data-lg="NOTE_DETAILS"></span>
         </div>
         
       </div>
       
       <div class="config-inputs">
         
-        <input id="note_input" type="text" maxlength="50" lg="ADD_TEXT_HERE">
+        <input id="note_input" type="text" maxlength="50" data-lg="ADD_TEXT_HERE">
         
       </div>
       
@@ -137,11 +137,11 @@
       <div class="config-text">
         
         <div class="bold">
-          <span lg="SELECT_FILES"></span>
+          <span data-lg="SELECT_FILES"></span>
         </div>
         
         <div class="small">
-          <span lg="SELECT_FILES_DETAILS"></span>
+          <span data-lg="SELECT_FILES_DETAILS"></span>
         </div>
         
       </div>
@@ -151,7 +151,7 @@
         <input id="file_input" class="hidden" type="file" multiple>
         <button id="selectFiles_btn">
           <img src="src/assets/imgs/file.svg">
-          <span lg="SELECT"></span>
+          <span data-lg="SELECT"></span>
         </button>
         
         <span id="filesInfo_span" class="small"></span>
@@ -164,7 +164,7 @@
       
       <button id="send_btn">
         <img src="src/assets/imgs/upload.svg">
-        <span lg="SEND"></span>
+        <span data-lg="SEND"></span>
       </button>
       
     </div>

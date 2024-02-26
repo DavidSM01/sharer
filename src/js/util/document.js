@@ -7,7 +7,7 @@ export let toggleClass = (classname, elem) => elem.classList.toggle(classname);
 export function toggleClasses(classes, elems) {
   elems.forEach((elem) => {
     classes.forEach((classname) => {
-        toggleClass(classname, elem);
+      toggleClass(classname, elem);
     });
   });
 }
@@ -15,7 +15,8 @@ export function toggleClasses(classes, elems) {
 
 export let setElemAttr = (val, elem, attr = "value") => elem[attr] = val;
 
-export let setInnerHTML = (htmlData, elem) => setElemAttr(htmlData, elem, 'innerHTML');
+//export let setInnerHTML = (html, elem) => elem.innerHTML = html;
+export let setTextContent = (text, elem) => elem.textContent = text;
 
 
 export let getByTag = tag => document.getElementsByTagName(tag);

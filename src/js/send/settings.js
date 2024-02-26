@@ -57,7 +57,9 @@ export default function () {
       let files = this.files;
       let amount = files.length;
 
-      let setText = html => util.doc.setInnerHTML(html, filesInfo_span);
+      let holder = util.doc.getById('filesInfo_span');
+
+      let setText = text => util.doc.setTextContent(text, holder);
 
       if (amount == 1) setText(files[0].name);
       if (amount > 1) setText(`${amount} ${LANG('FILES')}`);

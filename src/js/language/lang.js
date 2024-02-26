@@ -13,7 +13,7 @@ export function setInitials() {
 
   function setTexts() {
 
-    let setText = (elem, langKey) => util.doc.setInnerHTML(LANG(langKey), elem);
+    let setText = (elem, langKey) => util.doc.setTextContent(LANG(langKey), elem);
 
     setElemsLang('span', setText);
 
@@ -36,9 +36,8 @@ export function setInitials() {
     let elemsArr = util.arrFrom(elems);
 
     elemsArr.forEach((elem) => {
-      let langKey = util.doc.getAttrVal(elem, 'lg');
+      let langKey = util.doc.getAttrVal(elem, 'data-lg');
       if (langKey) setFunc(elem, langKey);
-
     });
   }
 

@@ -1,8 +1,7 @@
 export * as jszip from './jszip.js';
 export * as doc from './document.js';
-
-//export let doc = documentUtils;
-//export let jszip = jszipUtils;
+export * as xdc from './xdc.js';
+export { toColor } from './color.js';
 
 
 export let arrFrom = obj => Array.from(obj);

@@ -1,12 +1,14 @@
 import * as util from './util/util.js';
 
 
+let sendDiv = util.doc.getById('sendFiles_div');
+let mainDiv = util.doc.getById('main_div');
+
+export let toggleSendScreen = () => util.doc.toggleClasses(['hidden'], [sendDiv, mainDiv]);
+
 export default function () {
-  
-  let toggleSendFilesScreen = () => util.doc.toggleClasses(['hidden'], [sendFiles_div, main_div]);
 
-
-  sendFiles_btn.onclick = () => toggleSendFilesScreen();
-  closeSendFiles_btn.onclick = () => toggleSendFilesScreen();
+  sendFiles_btn.onclick = () => toggleSendScreen();
+  closeSendFiles_btn.onclick = () => toggleSendScreen();
 
 }

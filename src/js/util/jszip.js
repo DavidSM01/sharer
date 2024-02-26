@@ -12,9 +12,9 @@ export function setData(zipObj, path, data, options = {}) {
 }
 
 
-export function createZip(zipObj, onChunkFunc, options = {}) {
+export async function createZip(zipObj, onChunkFunc, options = {}) {
 
-  let zip = zipObj.generateAsync(options, onChunkFunc);
+  let zip = await zipObj.generateAsync(options, onChunkFunc);
 
   return zip;
 } 
