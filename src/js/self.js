@@ -27,5 +27,5 @@ function getId(name) {
 
 
 export let name = getName(xdcName, xdcAddr);
-export let color = util.toColor(xdcAddr);
 export let id = getId(name);
+export let color = util.toColor(xdcAddr);

@@ -7,6 +7,6 @@ export default function () {
   setSendSettings();
 
   let sendBtn = util.doc.getById('send_btn');
-  sendBtn.onclick = () => addToQueue();
+  util.doc.addListener(sendBtn, 'click', addToQueue);
 
 }

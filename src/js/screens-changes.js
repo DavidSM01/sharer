@@ -11,7 +11,7 @@ export default function () {
   let sendFilesBtn = util.doc.getById('sendFiles_btn');
   let closeSendFilesBtn = util.doc.getById('closeSendFiles_btn');
 
-  sendFilesBtn.onclick = () => toggleSendScreen();
-  closeSendFilesBtn.onclick = () => toggleSendScreen();
+  util.doc.addListener(sendFilesBtn, 'click', toggleSendScreen);
+  util.doc.addListener(closeSendFilesBtn, 'click', toggleSendScreen);
 
 }

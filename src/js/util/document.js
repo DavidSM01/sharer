@@ -13,17 +13,12 @@ export function toggleClasses(classes, elems) {
 }
 
 
-export let setElemAttr = (val, elem, attr = "value") => elem[attr] = val;
-
 export let setTextContent = (text, elem) => elem.textContent = text;
 
 
 export let getById = id => document.getElementById(id);
 
-//export let query = (elem, css) => elem.querySelector(css);
-
 export let queryAll = (elem, css) => elem.querySelectorAll(css);
 
 
-
-export let getAttrVal = (elem, attr) => elem.getAttribute(attr);
+export let addListener = (elem, event, func, options = {}) => elem.addEventListener(event, func, options);

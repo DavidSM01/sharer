@@ -2,7 +2,6 @@ import * as util from '../util/util.js';
 import { LANG } from '../language/lang.js';
 
 
-
 export default function () {
 
   let compressCheckbox = util.doc.getById('compress_checkbox');
@@ -18,22 +17,21 @@ export default function () {
 
     let saveElemAttr = (elem, attr = 'value') => util.LSsetItem(elem.id, elem[attr]);
 
-    compressCheckbox.onchange = function () {
+    util.doc.addListener(compressCheckbox, 'click', function () {
       saveElemAttr(this, 'checked');
-    }
+    });
 
-    confirmCheckbox.onchange = function () {
+    util.doc.addListener(confirmCheckbox, 'click', function () {
       saveElemAttr(this, 'checked');
-    }
+    });
 
-    sizeInput.oninput = function () {
+    util.doc.addListener(sizeInput, 'input', function () {
       saveElemAttr(this);
-    }
+    });
 
-    unitSelect.onchange = function () {
+    util.doc.addListener(unitSelect, 'change', function () {
       saveElemAttr(this);
-    }
-
+    });
 
   }
 
@@ -45,10 +43,10 @@ export default function () {
     let size = util.LSgetItem('size_input');
     let unit = util.LSgetItem('unit_select');
 
-    if (confirmRequired == 'true') util.doc.setElemAttr(true, confirmCheckbox, 'checked');
-    if (compression == 'false') util.doc.setElemAttr(false, compressCheckbox, 'checked')
-    if (size) util.doc.setElemAttr(size, sizeInput);
-    if (unit) util.doc.setElemAttr(unit, unitSelect);
+    if (compression == 'false') compressCheckbox.checked = false;
+    if (confirmRequired == 'true') confirmCheckbox.checked = true;
+    if (size) sizeInput.value = size;
+    if (unit) unitSelect.value = unit;
 
   }
 
