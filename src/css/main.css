@@ -11,8 +11,14 @@
 }
 
 
+#main_div,
+#sendFiles_div {
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
 .hidden {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .bold {
@@ -30,6 +36,7 @@
   border-bottom: 1px solid purple;
   padding-top: 10px;
   padding-bottom: 10px;
+  transition: background-color 0.2s;
 }
 
 .config-elem div {
