@@ -17,4 +17,4 @@ export async function createZip(zipObj, onChunkFunc, options = {}) {
   let zip = await zipObj.generateAsync(options, onChunkFunc);
 
   return zip;
-} 
+}
