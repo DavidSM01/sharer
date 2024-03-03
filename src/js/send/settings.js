@@ -2,29 +2,35 @@ import * as util from '../util/util.js';
 import { LANG } from '../language/lang.js';
 
 
+
 export default function () {
 
-  setSavedSettings();
+  let compressCheckbox = util.doc.getById('compress_checkbox');
+  let confirmCheckbox = util.doc.getById('confirm_checkbox');
+  let sizeInput = util.doc.getById('size_input');
+  let unitSelect = util.doc.getById('unit_select');
+
   setSettingsSavers();
+  setSavedSettings();
   setFilesSelector();
 
   function setSettingsSavers() {
 
     let saveElemAttr = (elem, attr = 'value') => util.LSsetItem(elem.id, elem[attr]);
 
-    compress_checkbox.onchange = function () {
+    compressCheckbox.onchange = function () {
       saveElemAttr(this, 'checked');
     }
 
-    confirm_checkbox.onchange = function () {
+    confirmCheckbox.onchange = function () {
       saveElemAttr(this, 'checked');
     }
 
-    size_input.oninput = function () {
+    sizeInput.oninput = function () {
       saveElemAttr(this);
     }
 
-    unit_select.onchange = function () {
+    unitSelect.onchange = function () {
       saveElemAttr(this);
     }
 
@@ -39,10 +45,10 @@ export default function () {
     let size = util.LSgetItem('size_input');
     let unit = util.LSgetItem('unit_select');
 
-    if (confirmRequired == 'true') util.doc.setElemAttr(true, confirm_checkbox, 'checked');
-    if (compression == 'false') util.doc.setElemAttr(false, compress_checkbox, 'checked')
-    if (size) util.doc.setElemAttr(size, size_input);
-    if (unit) util.doc.setElemAttr(unit, unit_select);
+    if (confirmRequired == 'true') util.doc.setElemAttr(true, confirmCheckbox, 'checked');
+    if (compression == 'false') util.doc.setElemAttr(false, compressCheckbox, 'checked')
+    if (size) util.doc.setElemAttr(size, sizeInput);
+    if (unit) util.doc.setElemAttr(unit, unitSelect);
 
   }
 
@@ -50,9 +56,13 @@ export default function () {
 
   function setFilesSelector() {
 
-    selectFiles_btn.onclick = () => file_input.click();
+    let selectFilesBtn = util.doc.getById('selectFiles_btn');
+    let fileInput = util.doc.getById('file_input');
 
-    file_input.onchange = function () {
+
+    selectFilesBtn.onclick = () => fileInput.click();
+
+    fileInput.onchange = function () {
 
       let files = this.files;
       let amount = files.length;

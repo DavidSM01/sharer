@@ -8,10 +8,10 @@ export let toggleSendScreen = () => util.doc.toggleClasses(['hidden'], [sendDiv,
 
 export default function () {
 
-  let sendFiles = util.doc.getById('sendFiles_btn');
-  let closeSendFiles = util.doc.getById('closeSendFiles_btn');
+  let sendFilesBtn = util.doc.getById('sendFiles_btn');
+  let closeSendFilesBtn = util.doc.getById('closeSendFiles_btn');
 
-  sendFiles.onclick = () => toggleSendScreen();
-  closeSendFiles.onclick = () => toggleSendScreen();
+  sendFilesBtn.onclick = () => toggleSendScreen();
+  closeSendFilesBtn.onclick = () => toggleSendScreen();
 
 }
