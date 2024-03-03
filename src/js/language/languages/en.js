@@ -9,7 +9,7 @@ export default {
   NOTE: 'Note',
   NOTE_DETAILS: 'Optional, maximun 50 characters.',
   ADD_TEXT_HERE: 'Add text here',
-  SELECT_FILES: 'Select file(s)',
+  SELECT_FILES: 'Select File(s)',
   SELECT_FILES_DETAILS: 'Mandatory, you can select multiple files of any kind.',
   SELECT: 'Select',
   FILES: 'files',

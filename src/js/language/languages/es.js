@@ -9,11 +9,11 @@ export default {
   NOTE: 'Nota',
   NOTE_DETAILS: 'Opcional, máximo 50 carácteres',
   ADD_TEXT_HERE: 'Añade texto aquí',
-  SELECT_FILES: 'Seleccionar archivo(s)',
+  SELECT_FILES: 'Seleccionar Archivo(s)',
   SELECT_FILES_DETAILS: 'Obligatorio, puedes seleccionar multiples archivos de cualquier tipo.',
   SELECT: 'Seleccionar',
   FILES: 'archivos',
   SEND: 'Enviar',
-  REQUIRE_CONFIRMATION: 'Requerir confirmación',
+  REQUIRE_CONFIRMATION: 'Requerir Confirmación',
   CONFIRMATION_DETAILS: 'Esperar por confirmación de que cada parte es recibida para enviar la siguiente',
 }
