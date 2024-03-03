@@ -19,24 +19,19 @@ function checkMandatories() {
 
   let highlight = elem => util.doc.addClass('warning', elem);
 
-
   let sizeValue = util.doc.getById('size_input').value;
   let sizeUnit = util.doc.getById('unit_select').value;
   let partSize = sizeValue * sizeUnit;
 
   let partSizeDiv = util.doc.getById('partSize_div');
-
   let validPartSize = partSize >= (1024 * 40) || highlight(partSizeDiv);
-  if (validPartSize) util.doc.removeClass('warning', partSizeDiv);
 
 
   let files = util.doc.getById('file_input').files;
   let amount = files.length;
 
   let selectFilesDiv = util.doc.getById('selectFiles_div');
-
   let filesSelected = amount > 0 || highlight(selectFilesDiv);
-  if (filesSelected) util.doc.removeClass('warning', selectFilesDiv);
 
 
   if (validPartSize && filesSelected) {
