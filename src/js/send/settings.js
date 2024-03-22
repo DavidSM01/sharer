@@ -1,32 +1,26 @@
-import * as util from '../util/util.js';
-import { LANG } from '../language/lang.js';
+import { LANG } from "../language/lang.js";
 
+let sizeInput = document.getElementById("size_input");
+let unitSelect = document.getElementById("unit_select");
 
-let sizeInput = () => util.doc.getById('size_input');
-let unitSelect = () => util.doc.getById('unit_select');
+let fileInput = document.getElementById("file_input");
 
-
-let fileInput = () => util.doc.getById('file_input');
-
-
-let addWarning = elem => util.doc.addClass('warning', elem);
-let removeWarning = elem => util.doc.removeClass('warning', elem);
-
+let addWarning = (elem) => elem.classList.add("warning");
+let removeWarning = (elem) => elem.classList.remove("warning");
 
 export function checkValidPartSize() {
-  let partSizeDiv = util.doc.getById('partSize_div');
-  let partSize = sizeInput().value * unitSelect().value;
-  let validPartSize = partSize >= (1024 * 40);
+  let partSizeDiv = document.getElementById("partSize_div");
+  let partSize = sizeInput.value * unitSelect.value;
+  let validPartSize = partSize >= 1024 * 40;
   if (validPartSize) {
     removeWarning(partSizeDiv);
     return partSize;
   } else addWarning(partSizeDiv);
 }
 
-
 export function checkIfSelectedFiles() {
-  let selectFilesDiv = util.doc.getById('selectFiles_div');
-  let files = fileInput().files;
+  let selectFilesDiv = document.getElementById("selectFiles_div");
+  let files = fileInput.files;
   let amount = files.length;
   if (amount > 0) {
     removeWarning(selectFilesDiv);
@@ -34,83 +28,66 @@ export function checkIfSelectedFiles() {
   } else addWarning(selectFilesDiv);
 }
 
-
-export let compressCheckbox = () => util.doc.getById('compress_checkbox');
-export let confirmCheckbox = () => util.doc.getById('confirm_checkbox');
-
+export let compressCheckbox = document.getElementById("compress_checkbox");
+export let confirmCheckbox = document.getElementById("confirm_checkbox");
 
 export default function () {
-
-
   setSavedSettings();
   setSettingsSavers();
   setFilesSelector();
 
-
   function setSettingsSavers() {
+    let saveElemAttr = (elem, attr = "value") =>
+      localStorage.setItem(elem.id, elem[attr]);
 
-    let saveElemAttr = (elem, attr = 'value') => util.LSsetItem(elem.id, elem[attr]);
-
-    util.doc.addListener(compressCheckbox(), 'click', function () {
-      saveElemAttr(this, 'checked');
+    compressCheckbox.addEventListener("click", function () {
+      saveElemAttr(this, "checked");
     });
 
-    util.doc.addListener(confirmCheckbox(), 'click', function () {
-      saveElemAttr(this, 'checked');
+    confirmCheckbox.addEventListener("click", function () {
+      saveElemAttr(this, "checked");
     });
 
-    util.doc.addListener(sizeInput(), 'input', function () {
+    sizeInput.addEventListener("input", function () {
       saveElemAttr(this);
       checkValidPartSize();
     });
 
-    util.doc.addListener(unitSelect(), 'change', function () {
+    unitSelect.addEventListener("change", function () {
       saveElemAttr(this);
       checkValidPartSize();
     });
-
   }
-
 
   function setSavedSettings() {
+    let compression = localStorage.getItem("compress_checkbox");
+    let confirmRequired = localStorage.getItem("confirm_checkbox");
+    let size = localStorage.getItem("size_input");
+    let unit = localStorage.getItem("unit_select");
 
-    let compression = util.LSgetItem('compress_checkbox');
-    let confirmRequired = util.LSgetItem('confirm_checkbox');
-    let size = util.LSgetItem('size_input');
-    let unit = util.LSgetItem('unit_select');
-
-    if (compression == 'false') compressCheckbox().checked = false;
-    if (confirmRequired == 'true') confirmCheckbox().checked = true;
-    if (size) sizeInput().value = size;
-    if (unit) unitSelect().value = unit;
-
+    if (compression == "false") compressCheckbox.checked = false;
+    if (confirmRequired == "true") confirmCheckbox.checked = true;
+    if (size) sizeInput.value = size;
+    if (unit) unitSelect.value = unit;
   }
 
-
-
   function setFilesSelector() {
+    let selectFilesBtn = document.getElementById("selectFiles_btn");
 
-    let selectFilesBtn = util.doc.getById('selectFiles_btn');
+    selectFilesBtn.addEventListener("click", () => fileInput.click());
 
-    util.doc.addListener(selectFilesBtn, 'click', () => fileInput().click());
-
-    util.doc.addListener(fileInput(), 'change', () => {
-
+    fileInput.addEventListener("change", () => {
       let files = checkIfSelectedFiles();
       if (files) {
         let amount = files.length;
 
-        let holder = util.doc.getById('filesInfo_span');
+        let holder = document.getElementById("filesInfo_span");
 
-        let setText = text => util.doc.setTextContent(text, holder);
+        let setText = (text) => (holder.textContent = text);
 
         if (amount == 1) setText(files[0].name);
-        if (amount > 1) setText(`${amount} ${LANG('FILES')}`);
-
+        if (amount > 1) setText(`${amount} ${LANG("FILES")}`);
       }
-
     });
   }
-
-
 }

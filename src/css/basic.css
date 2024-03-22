@@ -6,12 +6,10 @@ select {
   font-family: Sans-Serif, Arial;
 }
 
-
 body {
   background-color: var(--bg-color);
   margin: 0;
 }
-
 
 button,
 input,
@@ -19,7 +17,6 @@ select {
   height: 40px;
   border-radius: 5px;
 }
-
 
 button {
   background-color: var(--btn-color);
@@ -36,28 +33,25 @@ button:active {
   background-color: hsl(200, 90%, 60%);
 }
 
-
 input,
 select {
   background-color: var(--bg-color);
   border: 2px solid purple;
 }
 
-
 input {
   caret-color: purple;
 }
 
-input[type=number] {
+input[type="number"] {
   text-align: center;
 }
-
 
 h3 {
   color: purple;
 }
 
-
 img {
   vertical-align: middle;
 }
+

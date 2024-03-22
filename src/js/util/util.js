@@ -1,15 +1,10 @@
 export * as jszip from './jszip.js';
 export * as doc from './document.js';
 export * as xdc from './xdc.js';
-export { toColor } from './color.js';
+import getRGB from "consistent-color-generation";
 
 
-export let arrFrom = obj => Array.from(obj);
-
-export let time = () => Date.now();
-
-export let LSgetItem = key => localStorage.getItem(key);
-export let LSsetItem = (key, item) => localStorage.setItem(key, item);
+export let toColor = string => getRGB(string).toString();
 
 
 export let toDigit = (number, digits) => {
@@ -23,9 +18,4 @@ export let toDigit = (number, digits) => {
 
   return string;
 
-}
-
-
-export let random = () => {
-  return Math.trunc(Math.random() * 10000)
 }

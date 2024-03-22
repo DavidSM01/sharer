@@ -1,10 +1,14 @@
-import * as util from '../util/util.js';
-import * as selfData from '../self.js';
+import * as util from "../util/util.js";
+import * as selfData from "../self.js";
 
-
-export default function addToQueue(files, partSize, compression, confirmRequired, note) {
-
-  let filesArr = util.arrFrom(files);
+export default function addToQueue(
+  files,
+  partSize,
+  compression,
+  confirmRequired,
+  note,
+) {
+  let filesArr = Array.from(files);
   let filesInfo = filesArr.map((file, index) => getFileInfo(file));
 
   let info = {
@@ -20,14 +24,13 @@ export default function addToQueue(files, partSize, compression, confirmRequired
       compression: compression,
       confirm: confirmRequired,
     },
-    time: util.time(),
-  }
+    time: Date.now(),
+  };
 
+  console.log(info);
 }
 
-
 function getFileInfo(file) {
-
   let name = file.name;
   let size = file.size;
   let type = file.type;
@@ -39,9 +42,7 @@ function getFileInfo(file) {
   };
 
   return info;
-
 }
-
 
 /*
 async function zipFile(file, compression, onChunkFunc) {
@@ -66,3 +67,4 @@ async function zipFile(file, compression, onChunkFunc) {
   return zip;
 }
 */
+
